@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean name="emp1" class="com.learning.spring.entity.Employee">
+    <property name="id" value="7"/>
+    <property name="name" value="Jatin"/>
+    <property name="gender" value="male"/>
+    <property name="address" ref="add1"/>
+        <!-- add1 and add2 bean banaya hai or uska reference de rahe hai ref me taaki value constructor me jaye  -->
+    </bean>
+
+    <bean name="add1" class="com.learning.spring.entity.Address">
+    <property name="city" value="Noida"/>
+    <property name="state" value="UP"/>
+    </bean>
+
+    <bean name="add2" class="com.learning.spring.entity.Address">
+    <property name="city" value="Delhi"/>
+    <property name="state" value="New Delhi"/>
+    </bean>
+   
+
+    <bean name="emp2" class="com.learning.spring.entity.Employee">
+    <property name="id" value="3"/>
+    <property name="name" value="kavita"/>
+    <property name="gender" value="female"/>
+    <property name="address" ref="add2"/>
+    <!-- add1 and add2 bean banaya hai or uska reference de rahe hai ref me taaki value constructor me jaye  -->
+    </bean>
+
+    
+</beans>

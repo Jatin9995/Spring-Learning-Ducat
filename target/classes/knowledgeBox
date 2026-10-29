@@ -1,0 +1,28 @@
+Spring Framework ek Java framework hai jo Java applications ko develop karna easy banata hai.
+Ye mainly IOC (Inversion of Control) aur Dependency Injection (DI) provide karta hai, jisse objects ko manually create aur manage karne ki zarurat nahi padti.
+"Spring Framework ek lightweight Java framework hai jo Dependency Injection aur IOC ke through loosely coupled applications banane me help karta hai."
+Spring me object hum nahi banate. 
+Bean:-Jo object Spring banata aur manage karta hai, usko Bean kehte hain.
+
+IOC(Inversion of Control): IOC Container Spring ka manager hai. 
+Ye:
+* Objects (Beans) create karta hai
+* Dependencies inject karta hai. Dependency Injection ke liye IOC Container ko metadata dena padta hai, jo XML configuration ya annotations (@Component, @Autowired) ke through provide kiya ja sakta hai.
+* Beans ko manage karta hai
+
+Metadata kya hota hai?
+IOC Container ko batana padta hai ki:   
+* Kaunsi classes Bean hain?
+* Kaunsi dependency inject karni hai?
+
+Ye information hi Metadata kehlati hai.
+
+Metadata dene ke 2 tareeke hain:
+1. XML
+2. Annotations
+
+IOC container ka naam hai "ApplicationContext". ApplicationContext Spring IOC Container ka advanced implementation hai jo beans ko create, configure aur manage karta hai.
+ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+
+
+
