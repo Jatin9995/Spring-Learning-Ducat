@@ -6,31 +6,53 @@
 
     <!-- bean definitions here -->
 
+<!-- add1 bean banaya hai or uska reference de rahe hai ref me taaki value constructor me jaye  -->
     <bean name="emp1" class="com.learning.spring.entity.Employee">
     <property name="id" value="7"/>
     <property name="name" value="Jatin"/>
     <property name="gender" value="male"/>
     <property name="address" ref="add1"/>
-        <!-- add1 and add2 bean banaya hai or uska reference de rahe hai ref me taaki value constructor me jaye  -->
+    <property name = "list">
+         <list>
+    <value>100</value>
+    <value>200</value>
+    <value>300</value>
+    <value>400</value>
+    <value>500</value>
+    <value>600</value>
+    <value>700</value>
+    </list>
+    </property>
+
+    <property name="set">
+    <set>
+    <value>10</value>
+    <value>20</value>
+    <value>30</value>
+    <value>40</value>
+    <value>30</value>
+    <value>60</value>
+    <value>30</value>
+    </set>
+    </property>
+
+    <property name="map">
+    <map>
+    <entry key="1" value="Delhi"/>
+    <entry key="2" value="Mumbai"/>
+    <entry key="3" value="Chennai"/>
+    <entry key="4" value="Hyderabad"/>
+    <entry key="5" value="Kolkata"/>
+    <entry key="6" value="Bangalore"/>
+    <entry key="1" value="Noida"/>
+    </map>
+    </property>
+        
     </bean>
 
     <bean name="add1" class="com.learning.spring.entity.Address">
     <property name="city" value="Noida"/>
     <property name="state" value="UP"/>
-    </bean>
-
-    <bean name="add2" class="com.learning.spring.entity.Address">
-    <property name="city" value="Delhi"/>
-    <property name="state" value="New Delhi"/>
-    </bean>
-   
-
-    <bean name="emp2" class="com.learning.spring.entity.Employee">
-    <property name="id" value="3"/>
-    <property name="name" value="kavita"/>
-    <property name="gender" value="female"/>
-    <property name="address" ref="add2"/>
-    <!-- add1 and add2 bean banaya hai or uska reference de rahe hai ref me taaki value constructor me jaye  -->
     </bean>
 
     
