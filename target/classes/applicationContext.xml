@@ -5,55 +5,26 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
+<!-- autowire used here. byName autowire used. in this bean name & property name are same. so spring will autowire by name. -->
+    <!-- <bean name="emp1" class="com.learning.spring.entity.Employee" autowire="byName"> -->
 
-<!-- add1 bean banaya hai or uska reference de rahe hai ref me taaki value constructor me jaye  -->
-    <bean name="emp1" class="com.learning.spring.entity.Employee">
+    <!-- byType autowire used here. in this bean name & property name are different. so spring will autowire by type. Type means datatype. -->
+    <bean name="emp1" class="com.learning.spring.entity.Employee" autowire="byType">
     <property name="id" value="7"/>
     <property name="name" value="Jatin"/>
-    <property name="gender" value="male"/>
-    <property name="address" ref="add1"/>
-    <property name = "list">
-         <list>
-    <value>100</value>
-    <value>200</value>
-    <value>300</value>
-    <value>400</value>
-    <value>500</value>
-    <value>600</value>
-    <value>700</value>
-    </list>
-    </property>
-
-    <property name="set">
-    <set>
-    <value>10</value>
-    <value>20</value>
-    <value>30</value>
-    <value>40</value>
-    <value>30</value>
-    <value>60</value>
-    <value>30</value>
-    </set>
-    </property>
-
-    <property name="map">
-    <map>
-    <entry key="1" value="Delhi"/>
-    <entry key="2" value="Mumbai"/>
-    <entry key="3" value="Chennai"/>
-    <entry key="4" value="Hyderabad"/>
-    <entry key="5" value="Kolkata"/>
-    <entry key="6" value="Bangalore"/>
-    <entry key="1" value="Noida"/>
-    </map>
-    </property>
-        
+    <property name="gender" value="male"/>    
     </bean>
 
-    <bean name="add1" class="com.learning.spring.entity.Address">
+
+<!-- primary=true islye user karte hai ddress me taaki maan lo hamare paas 2 address hai to employee bean ko batana padega ki kisko priority dena hai means kis address ko lena hai. -->
+    <bean name="add" class="com.learning.spring.entity.Address" primary="true" >
     <property name="city" value="Noida"/>
     <property name="state" value="UP"/>
     </bean>
+
+
+
+ 
 
     
 </beans>

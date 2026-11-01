@@ -33,7 +33,7 @@ List ka hum use kr sakte hai xml file me multiple value iject karne k liye.
     <property name="state" value="UP"/>
     </bean>
 
-    Bean k andar property tag use karna matlan ki setters call ho rahe hai. iskly waha value de hai keys ki taaki getter se value fetch kr sake.
+    Bean k andar property tag use karna matlab ki setters call ho rahe hai. islye waha value de hai keys ki taaki getter se value fetch kr sake.
 
 
 There are many key differences between constructor injection and setter injection.
@@ -41,6 +41,24 @@ There are many key differences between constructor injection and setter injectio
 2. Overriding: Setter injection overrides the constructor injection. If we use both constructor and setter injection, IOC container will use the setter injection.
 3. Changes: We can easily change the value by setter injection. It doesn't create a new bean instance always like constructor. So setter injection is flexible than constructor injection.
 
+Autowiring:
+----------
+Spring me Autowiring ka use dependencies ko automatically inject karne ke liye hota hai. Matlab hume manually <property> ya object reference set nahi karna padta. Spring khud required object ko connect kar deta hai.
+Important Points:
+-----------------
+Dependency automatically inject ho jati hai.
+Internally Spring setter injection ya constructor injection use karta hai.
+Autowiring primitive types (int, double, etc.) aur String values ke liye nahi hoti.
+Ye sirf object references ke liye kaam karti hai.
+✅ Advantage:
+ Code kam likhna padta hai kyunki dependencies manually configure nahi karni padti.
+
+1. byName
+The byName mode injects the object dependency according to name of the bean. In such case, property name and bean name must be same. It internally calls setter method.
+2. byType
+The byType mode injects the object dependency according to type. So property name and bean name can be different. It internally calls setter method.
+3. byConstructor
+The constructor mode injects the dependency by calling the constructor of the class. It calls the constructor having large number of parameters.
 
 
 
