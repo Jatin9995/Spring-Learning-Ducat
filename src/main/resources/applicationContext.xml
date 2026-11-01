@@ -9,11 +9,12 @@
     <!-- <bean name="emp1" class="com.learning.spring.entity.Employee" autowire="byName"> -->
 
     <!-- byType autowire used here. in this bean name & property name are different. so spring will autowire by type. Type means datatype. -->
-    <bean name="emp1" class="com.learning.spring.entity.Employee" autowire="byType">
+    <!-- Prototype = Every request par new object.  -->
+    <bean name="emp1" class="com.learning.spring.entity.Employee" autowire="byType" scope="prototype">
     <property name="id" value="7"/>
     <property name="name" value="Jatin"/>
     <property name="gender" value="male"/>    
-    </bean>
+    </bean> 
 
 
 <!-- primary=true islye user karte hai ddress me taaki maan lo hamare paas 2 address hai to employee bean ko batana padega ki kisko priority dena hai means kis address ko lena hai. -->

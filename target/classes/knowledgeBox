@@ -60,6 +60,13 @@ The byType mode injects the object dependency according to type. So property nam
 3. byConstructor
 The constructor mode injects the dependency by calling the constructor of the class. It calls the constructor having large number of parameters.
 
-
+scope="prototype"
+----------------
+By default Spring bean ka scope singleton hota hai, yani poori application me sirf 1 object banta hai.
+Agar tum:
+<bean id="student" class="com.jatin.Student" scope="prototype"/>
+use karte ho, to har baar bean mangaoge to naya object create hoga.
+✅ Prototype = Every request par new object
+ ✅ Singleton = Same object repeatedly
 
 
